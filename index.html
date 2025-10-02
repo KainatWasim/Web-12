@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #c31432);
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      width: 280px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .calculator h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      margin: 5px 0;
+      text-align: right;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 2px solid #c31432;
+      outline: none;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .btn-red {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Calculator</h2>
+    <input type="text" id="inputBox" disabled>
+    <input type="text" id="resultBox" disabled>
+
+    <div class="buttons">
+      <button class="btn-blue" onclick="clearAll()">AC</button>
+      <button class="btn-blue" onclick="appendValue('%')">%</button>
+      <button class="btn-blue" onclick="appendValue('/')">÷</button>
+      <button class="btn-red" onclick="appendValue('*')">×</button>
+
+      <button class="btn-blue" onclick="appendValue('7')">7</button>
+      <button class="btn-blue" onclick="appendValue('8')">8</button>
+      <button class="btn-blue" onclick="appendValue('9')">9</button>
+      <button class="btn-red" onclick="appendValue('-')">-</button>
+
+      <button class="btn-blue" onclick="appendValue('4')">4</button>
+      <button class="btn-blue" onclick="appendValue('5')">5</button>
+      <button class="btn-blue" onclick="appendValue('6')">6</button>
+      <button class="btn-red" onclick="appendValue('+')">+</button>
+
+      <button class="btn-blue" onclick="appendValue('1')">1</button>
+      <button class="btn-blue" onclick="appendValue('2')">2</button>
+      <button class="btn-blue" onclick="appendValue('3')">3</button>
+      <button class="btn-red" onclick="calculate()">=</button>
+
+      <button class="btn-blue" onclick="appendValue('.')">.</button>
+      <button class="btn-blue" onclick="appendValue('0')">0</button>
+      <button class="btn-blue" onclick="toggleSign()">+/-</button>
+    </div>
+  </div>
+
+  <script src="web.js"></script>
+   
+</body>
+</html>
